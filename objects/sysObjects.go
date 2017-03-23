@@ -87,3 +87,21 @@ type SystemParamState struct {
 	Distro      string `DESCRIPTION: "Linux distro running on this system"`
 	Kernel      string `DESCRIPTION: "Kernel version running on this system"`
 }
+
+type RuleFile struct {
+        Name   string `DESCRIPTION: "Name of the rule file"`
+        Path   string `DESCRIPTION: "Path of rule file"`
+        Rules  [] string `DESCRIPTION: "Rules "`
+}
+
+type DpiRulesState struct {
+        baseObj
+        RuleFiles  []RuleFile `DESCRIPTION: "All Rule Files"`
+        Description string `DESCRIPTION: "DpiRulesState Description"`
+}
+
+type DpiRules struct {
+        baseObj
+        RuleFiles  []RuleFile `DESCRIPTION: "All Rule Files"`
+        Description string `DESCRIPTION: "Dpi rules Description"`
+}
